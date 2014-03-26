@@ -14,12 +14,12 @@
             <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/home_spinner" android:layout_column="0" android:spinnerMode="dropdown"
+                    android:id="@+id/homeSpinner" android:layout_column="0" android:spinnerMode="dropdown"
                     />
             <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinner1" android:layout_column="1"/>
+                    android:id="@+id/currencySpinner" android:layout_column="1"/>
         </TableRow>
         <TableRow
                 android:layout_width="fill_parent"
@@ -28,7 +28,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New EditText"
-                    android:id="@+id/editText" android:layout_column="0"/>
+                    android:id="@+id/priceInput" android:layout_column="0" android:inputType="numberDecimal"/>
         </TableRow>
         <TableRow
                 android:layout_width="fill_parent"
@@ -36,11 +36,11 @@
             <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinner2" android:layout_column="0"/>
+                    android:id="@+id/awaySpinner" android:layout_column="0"/>
             <Spinner
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/spinner3" android:layout_column="1"/>
+                    android:id="@+id/awayCurrency" android:layout_column="1"/>
         </TableRow>
         <TableRow
                 android:layout_width="fill_parent"
@@ -49,7 +49,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="New Text"
-                    android:id="@+id/textView" android:layout_column="0"/>
+                    android:id="@+id/priceOutput" android:layout_column="0"/>
         </TableRow>
     </TableLayout>
 </LinearLayout>
