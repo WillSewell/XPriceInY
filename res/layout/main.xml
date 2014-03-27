@@ -27,7 +27,7 @@
             <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="New EditText"
+                    android:text="0.00"
                     android:id="@+id/priceInput" android:layout_column="0" android:inputType="numberDecimal"/>
         </TableRow>
         <TableRow
