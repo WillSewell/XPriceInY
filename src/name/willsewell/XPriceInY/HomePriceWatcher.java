@@ -9,13 +9,15 @@ import java.text.NumberFormat;
 /**
  * Text watcher to keep the money input field formatted correctly.
  */
-public class MoneyTextWatcher implements TextWatcher{
+public class HomePriceWatcher implements TextWatcher {
 
     private EditText priceInput;
+    private AwayPriceUpdater awayPriceUpdater;
     private String current = "";
 
-    public MoneyTextWatcher(EditText priceInput) {
+    public HomePriceWatcher(EditText priceInput, AwayPriceUpdater awayPriceUpdater) {
         this.priceInput = priceInput;
+        this.awayPriceUpdater = awayPriceUpdater;
     }
 
     @Override
@@ -39,6 +41,8 @@ public class MoneyTextWatcher implements TextWatcher{
             priceInput.setSelection(formatted.length());
 
             priceInput.addTextChangedListener(this);
+
+            awayPriceUpdater.updateAwayPrice(java.lang.Math.round(Float.parseFloat(cleanString) * 100) / 10000);
         }
     }
 }

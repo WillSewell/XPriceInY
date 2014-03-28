@@ -3,15 +3,13 @@ package name.willsewell.XPriceInY;
 import android.app.Activity;
 import android.content.res.AssetManager;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import au.com.bytecode.opencsv.CSVReader;
 
 import java.io.*;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Properties;
 
@@ -47,11 +45,19 @@ public class XPriceInY extends Activity {
         }
 
         // create a new spinner to attach the array of countries to
-        Spinner spinner = (Spinner) findViewById(R.id.homeSpinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, countries);
-        spinner.setAdapter(adapter);
+        Spinner homeLocation = (Spinner) findViewById(R.id.homeSpinner);
+        ArrayAdapter<String> homeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, countries);
+        homeLocation.setAdapter(homeAdapter);
 
-        final EditText priceInput = (EditText) findViewById(R.id.priceInput);
-        priceInput.addTextChangedListener(new MoneyTextWatcher(priceInput));
+        // create a new spinner to attach the array of countries to
+        Spinner awayLocation = (Spinner) findViewById(R.id.awaySpinner);
+        ArrayAdapter<String> awayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, countries);
+        awayLocation.setAdapter(awayAdapter);
+
+        TextView textView = (TextView) findViewById(R.id.priceOutput);
+        AwayPriceUpdater awayPriceUpdater = new AwayPriceUpdater(textView, homeLocation, awayLocation, cPIList);
+
+        EditText priceInput = (EditText) findViewById(R.id.priceInput);
+        priceInput.addTextChangedListener(new HomePriceWatcher(priceInput, awayPriceUpdater));
     }
 }
