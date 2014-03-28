@@ -19,7 +19,6 @@ public class XPriceInY extends Activity {
 
     private Properties properties;
     private ArrayList<String[]> cPIList;
-    private String current = "";
 
     /**
      * Called when the activity is first created.
@@ -53,30 +52,6 @@ public class XPriceInY extends Activity {
         spinner.setAdapter(adapter);
 
         final EditText priceInput = (EditText) findViewById(R.id.priceInput);
-        priceInput.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) { }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if (!s.toString().equals(current)) {
-                    priceInput.removeTextChangedListener(this);
-
-                    String cleanString = s.toString().replaceAll("[£$,.]", "");
-
-                    double parsed = Double.parseDouble(cleanString);
-                    String formatted = NumberFormat.getCurrencyInstance().format((parsed / 100));
-
-                    current = formatted;
-                    priceInput.setText(formatted);
-                    priceInput.setSelection(formatted.length());
-
-                    priceInput.addTextChangedListener(this);
-                }
-            }
-        });
+        priceInput.addTextChangedListener(new MoneyTextWatcher(priceInput));
     }
 }
