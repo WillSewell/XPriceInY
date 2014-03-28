@@ -1,56 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="fill_parent"
-              android:layout_height="fill_parent"
+<TableLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent" android:layout_gravity="center"
         >
-    <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent" android:layout_gravity="center"
-            >
-        <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
-            <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/homeSpinner" android:layout_column="0" android:spinnerMode="dropdown"
-                    />
-            <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/currencySpinner" android:layout_column="1"/>
-        </TableRow>
-        <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
-            <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0.00"
-                    android:id="@+id/priceInput" android:layout_column="0" android:inputType="numberDecimal"/>
-        </TableRow>
-        <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
-            <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/awaySpinner" android:layout_column="0"/>
-            <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/awayCurrency" android:layout_column="1"/>
-        </TableRow>
-        <TableRow
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="New Text"
-                    android:id="@+id/priceOutput" android:layout_column="0"/>
-        </TableRow>
-    </TableLayout>
-</LinearLayout>
-
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/homeSpinner" android:layout_column="0" android:spinnerMode="dropdown"
+                />
+        <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/currencySpinner" android:layout_column="1"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:id="@+id/priceInput" android:layout_column="0" android:inputType="numberDecimal"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/awaySpinner" android:layout_column="0"/>
+        <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/awayCurrency" android:layout_column="1"/>
+    </TableRow>
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/priceOutput" android:layout_column="0"/>
+    </TableRow>
+</TableLayout>
