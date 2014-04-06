@@ -43,12 +43,14 @@ public class XPriceInY extends Activity {
 
         // create a new spinner to attach the array of countries to
         AutoCompleteTextView homeLocation = (AutoCompleteTextView) findViewById(R.id.homeInput);
-        ArrayAdapter<String> homeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, countries);
+        ArrayAdapter<String> homeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line,
+                countries);
         homeLocation.setAdapter(homeAdapter);
 
         // create a new spinner to attach the array of countries to
         AutoCompleteTextView awayLocation = (AutoCompleteTextView) findViewById(R.id.awayInput);
-        ArrayAdapter<String> awayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, countries);
+        ArrayAdapter<String> awayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line,
+                countries);
         awayLocation.setAdapter(awayAdapter);
 
         TextView textView = (TextView) findViewById(R.id.priceOutput);
