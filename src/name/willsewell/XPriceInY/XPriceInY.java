@@ -47,16 +47,23 @@ public class XPriceInY extends Activity {
                 countries);
         homeLocation.setAdapter(homeAdapter);
 
+
         // create a new spinner to attach the array of countries to
         AutoCompleteTextView awayLocation = (AutoCompleteTextView) findViewById(R.id.awayInput);
         ArrayAdapter<String> awayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line,
                 countries);
         awayLocation.setAdapter(awayAdapter);
 
-        TextView textView = (TextView) findViewById(R.id.priceOutput);
-        AwayPriceUpdater awayPriceUpdater = new AwayPriceUpdater(textView, homeLocation, awayLocation, cPIList);
-
         EditText priceInput = (EditText) findViewById(R.id.priceInput);
+
+        TextView textView = (TextView) findViewById(R.id.priceOutput);
+        AwayPriceUpdater awayPriceUpdater = new AwayPriceUpdater(priceInput, textView, homeLocation, awayLocation,
+                cPIList);
+
+        // add the listeners to keep the price updated when any of the parameters change
+        CountryWatcher countryWatcher = new CountryWatcher(awayPriceUpdater);
+        homeLocation.addTextChangedListener(countryWatcher);
+        awayLocation.addTextChangedListener(countryWatcher);
         priceInput.addTextChangedListener(new HomePriceWatcher(priceInput, awayPriceUpdater));
     }
 }

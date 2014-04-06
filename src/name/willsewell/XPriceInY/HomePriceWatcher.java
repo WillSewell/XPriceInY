@@ -42,7 +42,7 @@ public class HomePriceWatcher implements TextWatcher {
 
             priceInput.addTextChangedListener(this);
 
-            awayPriceUpdater.updateAwayPrice(java.lang.Math.round(Float.parseFloat(cleanString) * 100) / 10000);
+            awayPriceUpdater.updateAwayPrice();
         }
     }
 }
