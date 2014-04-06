@@ -1,6 +1,5 @@
 package name.willsewell.XPriceInY;
 
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -11,11 +10,11 @@ import java.util.ArrayList;
 public class AwayPriceUpdater {
 
     private TextView priceOutput;
-    private Spinner homeLocation;
-    private Spinner awayLocation;
+    private TextView homeLocation;
+    private TextView awayLocation;
     private ArrayList<String[]> cPIList;
 
-    public AwayPriceUpdater(TextView priceOutput, Spinner homeLocation, Spinner awayLocation,
+    public AwayPriceUpdater(TextView priceOutput, TextView homeLocation, TextView awayLocation,
                             ArrayList<String[]> cPIList) {
         this.priceOutput = priceOutput;
         this.homeLocation = homeLocation;
@@ -25,11 +24,11 @@ public class AwayPriceUpdater {
 
     public void updateAwayPrice(float homePrice) {
         try {
-            float homeCPI = getCPI(homeLocation.getSelectedItem().toString());
-            float awayCPI = getCPI(awayLocation.getSelectedItem().toString());
+            float homeCPI = getCPI(homeLocation.getText().toString());
+            float awayCPI = getCPI(awayLocation.getText().toString());
             priceOutput.setText(Float.toString((homePrice / homeCPI) * awayCPI));
-        } catch (LocationNotFoundException lNFE) {
-            lNFE.printStackTrace();
+        } catch (NullPointerException | LocationNotFoundException e) {
+            e.printStackTrace();
         }
     }
 

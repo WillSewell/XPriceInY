@@ -3,10 +3,7 @@ package name.willsewell.XPriceInY;
 import android.app.Activity;
 import android.content.res.AssetManager;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TextView;
+import android.widget.*;
 import au.com.bytecode.opencsv.CSVReader;
 
 import java.io.*;
@@ -45,13 +42,13 @@ public class XPriceInY extends Activity {
         }
 
         // create a new spinner to attach the array of countries to
-        Spinner homeLocation = (Spinner) findViewById(R.id.homeSpinner);
-        ArrayAdapter<String> homeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, countries);
+        AutoCompleteTextView homeLocation = (AutoCompleteTextView) findViewById(R.id.homeInput);
+        ArrayAdapter<String> homeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, countries);
         homeLocation.setAdapter(homeAdapter);
 
         // create a new spinner to attach the array of countries to
-        Spinner awayLocation = (Spinner) findViewById(R.id.awaySpinner);
-        ArrayAdapter<String> awayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, countries);
+        AutoCompleteTextView awayLocation = (AutoCompleteTextView) findViewById(R.id.awayInput);
+        ArrayAdapter<String> awayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, countries);
         awayLocation.setAdapter(awayAdapter);
 
         TextView textView = (TextView) findViewById(R.id.priceOutput);
