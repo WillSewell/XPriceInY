@@ -1,6 +1,6 @@
 <ivy-module version="2.0">
     <info organisation="name.willsewell" module="XPriceInY" />
     <dependencies>
-        <dependency org="net.sf.opencsv" name="opencsv" rev="2.3" conf="binaries->default" />
+        <dependency org="net.sf.opencsv" name="opencsv" rev="2.3" />
     </dependencies>
 </ivy-module>
