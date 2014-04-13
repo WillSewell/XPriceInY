@@ -2,5 +2,6 @@
     <info organisation="name.willsewell" module="XPriceInY" />
     <dependencies>
         <dependency org="net.sf.opencsv" name="opencsv" rev="2.3" />
+        <dependency org="pull-parser" name="pull-parser" rev="2.1.10"/>
     </dependencies>
 </ivy-module>
